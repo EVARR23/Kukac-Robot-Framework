@@ -11,5 +11,6 @@ Deve carregar a página inicial com colunas principais e adicionar tarefa
     Passo 2 - Clicar em "adicionar tarefa" no To Do
     Passo 3 - Adicionar tarefa no backlog
     Passo 4 - Clicar no botão enviar
-    Passo 5 - Mover tarefa para In Progress
+    Passo 5 - Mover tarefa para Done
+    
     

@@ -33,7 +33,7 @@ Passo 4 - Clicar no botão enviar
     Click Button                     xpath=//*[contains(@id,"To DoCreateTask")]/div/form/div/button
     Sleep    2s
 
-Passo 5 - Mover tarefa para In Progress
+Passo 5 - Mover tarefa para Done
     Wait Until Element Is Visible    xpath=//*[contains(text(),"Teste automatizado")]    15s
     Wait Until Element Is Enabled    xpath=//*[contains(text(),"Teste automatizado")]    15s
 
@@ -42,4 +42,4 @@ Passo 5 - Mover tarefa para In Progress
 
     # Executa drag and drop
     Drag And Drop    xpath=//*[contains(text(),"Teste automatizado")]    xpath=//*[contains(., "In Progress")]
-    Sleep    2s
+    Sleep    5s
