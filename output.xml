@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-13T09:50:20.750135" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes" source="c:\Documents\kaban-robot\tests\testes.robot">
+<test id="s1-t1" name="Deve carregar a página inicial com colunas principais e adicionar tarefa" line="8">
+<kw name="Abrir o navegador" owner="teste" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-13T09:50:21.013383" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-08-13T09:50:21.134713" level="WARN">The chromedriver version (138.0.7204.168) detected in PATH at C:\Users\evilh\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (139.0.7258.67); currently, chromedriver 139.0.7258.68 is recommended for chrome 139.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-13T09:50:21.013064" elapsed="1.203923"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-13T09:50:22.217284" elapsed="0.022361"/>
+</kw>
+<status status="PASS" start="2025-08-13T09:50:21.012320" elapsed="1.227675"/>
+</kw>
+<kw name="Passo 1 - Acessar a página inicial e validar colunas" owner="teste">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-13T09:50:22.243536" level="INFO">Opening url 'https://kanban-dusky-five.vercel.app/'</msg>
+<arg>${urlBase}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-13T09:50:22.241977" elapsed="0.787305"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(., "To Do")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.029912" elapsed="0.014638"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(., "In Progress")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.044891" elapsed="0.011411"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(., "Done")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.056552" elapsed="0.010825"/>
+</kw>
+<status status="PASS" start="2025-08-13T09:50:22.240641" elapsed="0.826917"/>
+</kw>
+<kw name="Passo 2 - Clicar em &quot;adicionar tarefa&quot; no To Do" owner="teste">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.068385" elapsed="0.029472"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.098386" elapsed="0.035909"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-13T09:50:23.134806" level="INFO">Clicking element 'xpath=//*[contains(@id,"To DoCreateTask")]'.</msg>
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.134558" elapsed="0.060069"/>
+</kw>
+<status status="PASS" start="2025-08-13T09:50:23.068011" elapsed="0.126916"/>
+</kw>
+<kw name="Passo 3 - Adicionar tarefa no backlog" owner="teste">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]/div/form/input</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.197060" elapsed="0.020633"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]/div/form/input</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.217982" elapsed="0.016861"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-13T09:50:23.235321" level="INFO">Typing text 'Teste automatizado' into text field 'xpath=//*[contains(@id,"To DoCreateTask")]/div/form/input'.</msg>
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]/div/form/input</arg>
+<arg>Teste automatizado</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.235077" elapsed="0.083728"/>
+</kw>
+<status status="PASS" start="2025-08-13T09:50:23.195926" elapsed="0.123083"/>
+</kw>
+<kw name="Passo 4 - Clicar no botão enviar" owner="teste">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]/div/form/div/button</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.319697" elapsed="0.014122"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]/div/form/div/button</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.334074" elapsed="0.015612"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-13T09:50:23.350182" level="INFO">Clicking button 'xpath=//*[contains(@id,"To DoCreateTask")]/div/form/div/button'.</msg>
+<arg>xpath=//*[contains(@id,"To DoCreateTask")]/div/form/div/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.349936" elapsed="0.080366"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-13T09:50:25.431593" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-13T09:50:23.430754" elapsed="2.001344"/>
+</kw>
+<status status="PASS" start="2025-08-13T09:50:23.319388" elapsed="2.113025"/>
+</kw>
+<kw name="Passo 5 - Mover tarefa para In Progress" owner="teste">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(text(),"Teste automatizado")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T09:50:25.434566" elapsed="0.020469"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(text(),"Teste automatizado")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-08-13T09:50:25.455263" elapsed="0.062999"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(., "In Progress")]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-13T09:50:25.518740" elapsed="0.016179"/>
+</kw>
+<kw name="Drag And Drop" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(text(),"Teste automatizado")]</arg>
+<arg>xpath=//*[contains(., "In Progress")]</arg>
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<status status="PASS" start="2025-08-13T09:50:25.535152" elapsed="0.548705"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-13T09:50:28.085446" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-13T09:50:26.084344" elapsed="2.001644"/>
+</kw>
+<status status="PASS" start="2025-08-13T09:50:25.433771" elapsed="2.652557"/>
+</kw>
+<doc>Testa se a página inicial carrega com as colunas principais e adiciona uma tarefa no To Do</doc>
+<status status="PASS" start="2025-08-13T09:50:21.011298" elapsed="7.076626"/>
+</test>
+<status status="PASS" start="2025-08-13T09:50:20.754896" elapsed="7.336377"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Testes" id="s1" pass="1" fail="0" skip="0">Testes</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-13T09:50:21.134713" level="WARN">The chromedriver version (138.0.7204.168) detected in PATH at C:\Users\evilh\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (139.0.7258.67); currently, chromedriver 139.0.7258.68 is recommended for chrome 139.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
